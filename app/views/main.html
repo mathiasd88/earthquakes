@@ -1,0 +1,19 @@
+<div class="containet">
+    
+    <h1>Earthquakes in the last hour</h1>
+
+    <article ng-repeat="earthquake in earthquakes.features">
+            <a ng-href="/earthquake/{{ earthquake.id }}"><h4>Earthquake magnitude {{ earthquake.properties.mag }}</h4></a>
+            <p>Location: {{ earthquake.properties.place }} {{ earthquake.geometry.coordinates }}</p>
+            <p>Time: {{ earthquake.properties.time | date:"MM/dd/yyyy 'at' h:mma" }}</p>
+            
+            <div class="alert alert-danger" role="alert" ng-if="earthquake.properties.tsunami">
+                <p>Tsunami Alert!</p>
+            </div>
+    
+    </article>
+
+    
+
+</div>
+
