@@ -5,13 +5,10 @@
     <div class="form-group">
         <label>Minimum magnitude:</label>
         
-        <select ng-model="magnitude.selectedMagnitude" ng-change="getEarthquakes()">
-            <option ng-repeat="obj in magnitudes" value="{{ obj.id }}">{{ obj.id }}</option>
+        <select ng-model="earthquakesParams.minMagnitude" ng-change="getEarthquakes()">
+            <option ng-repeat="magnitude in magnitudes" value="{{ magnitude.id }}">{{ magnitude.id }}</option>
         </select>
-    </div>
-    <div class="form-group">
-        <input type="date" id="exampleInput" name="input" ng-model="example.value"
-       placeholder="yyyy-MM-dd" min="2013-01-01" max="2013-12-31" required />
+
     </div>
 
     <article ng-repeat="earthquake in earthquakes.features">
@@ -29,8 +26,4 @@
 
             <hr>
     </article>
-
-    
-
 </div>
-
