@@ -1,15 +1,32 @@
 <div class="containet">
     
-    <h1>Earthquakes in the last hour</h1>
+    <h1>Latest Earthquake Today</h1>
+
+    <div class="form-group">
+        <label>Minimum magnitude:</label>
+        
+        <select ng-model="magnitude.selectedMagnitude" ng-change="getEarthquakes()">
+            <option ng-repeat="obj in magnitudes" value="{{ obj.id }}">{{ obj.id }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="date" id="exampleInput" name="input" ng-model="example.value"
+       placeholder="yyyy-MM-dd" min="2013-01-01" max="2013-12-31" required />
+    </div>
 
     <article ng-repeat="earthquake in earthquakes.features">
             <a ng-href="/earthquake/{{ earthquake.id }}"><h4>Earthquake magnitude {{ earthquake.properties.mag }}</h4></a>
             <p>Location: {{ earthquake.properties.place }} {{ earthquake.geometry.coordinates }}</p>
             <p>Time: {{ earthquake.properties.time | date:"MM/dd/yyyy 'at' h:mma" }}</p>
-            
+
             <div class="alert alert-danger" role="alert" ng-if="earthquake.properties.tsunami">
                 <p>Tsunami Alert!</p>
             </div>
+
+            <map center="{{ earthquake.geometry.coordinates[1] + ',' + earthquake.geometry.coordinates[0] }}" zoom="4">
+                <marker position="{{ earthquake.geometry.coordinates[1] + ',' + earthquake.geometry.coordinates[0] }}" title="Hello World!"></marker>
+            </map>
+
             <hr>
     </article>
 

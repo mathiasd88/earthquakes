@@ -9,7 +9,24 @@
  */
 angular.module('earthquakeApp')
 .controller('MainCtrl', function ($scope, Earthquake) {
-	$scope.earthquakes = Earthquake.get();
-});
 
-// TODO: Agregar link a terremoto específico -> ?eventid=ak11532796
+	// Default values
+	$scope.magnitude = [];
+	$scope.magnitude.selectedMagnitude = 4;
+
+	$scope.magnitudes = [{id:4},{id:5},{id:6},{id:7},{id:8}];
+		
+
+	// 
+	$scope.getEarthquakes = function()
+	{
+		$scope.earthquakes = Earthquake.get({
+			format: 'geojson',
+			minmagnitude: $scope.magnitude.selectedMagnitude,
+			starttime: '2015-03-21',
+			limit: 1
+		});
+	};
+
+	$scope.getEarthquakes();
+});
