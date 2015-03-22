@@ -11,10 +11,11 @@
 
     </div>
 
-    <article ng-repeat="earthquake in earthquakes.features">
+    <article>
+        <div ng-repeat="earthquake in earthquakes.features">
             <a ng-href="/earthquake/{{ earthquake.id }}"><h4>Earthquake magnitude {{ earthquake.properties.mag }}</h4></a>
             <p>Location: {{ earthquake.properties.place }} {{ earthquake.geometry.coordinates }}</p>
-            <p>Time: {{ earthquake.properties.time | date:"MM/dd/yyyy 'at' h:mma" }}</p>
+            <p>Time: {{ earthquake.properties.time | date:"dd/MM/yyyy 'at' h:mma" }}</p>
 
             <div class="alert alert-danger" role="alert" ng-if="earthquake.properties.tsunami">
                 <p>Tsunami Alert!</p>
@@ -25,5 +26,9 @@
             </map>
 
             <hr>
+        </div>
+        <div ng-show="!earthquakes.length">There is not earthquakes with a magnitude over {{ earthquakesParams.minMagnitude }}<div/>
     </article>
+
+    
 </div>

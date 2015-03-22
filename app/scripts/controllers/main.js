@@ -8,7 +8,7 @@
  * Controller of the earthquakeApp
  */
 angular.module('earthquakeApp')
-.controller('MainCtrl', function ($scope, Earthquake) {
+.controller('MainCtrl', function ($scope, $filter, Earthquake) {
 
 	// Default values
 	$scope.today = new Date();
@@ -21,10 +21,12 @@ angular.module('earthquakeApp')
 	// 
 	$scope.getEarthquakes = function()
 	{
+		var today = $filter('date')(Date.now(), 'yyyy-MM-dd');
+
 		$scope.earthquakes = Earthquake.get({
 			format: 'geojson',
 			minmagnitude: $scope.earthquakesParams.minMagnitude,
-			starttime: '2015-03-21',
+			starttime: today,
 			limit: 10
 		});
 	};
