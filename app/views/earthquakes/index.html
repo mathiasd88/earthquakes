@@ -1,4 +1,4 @@
-<div class="containet">
+<div class="container">
     
     <h1>Latest Earthquake Today</h1>
 
@@ -13,7 +13,7 @@
 
     <article>
         <div ng-repeat="earthquake in earthquakes.features">
-            <a ng-href="/earthquake/{{ earthquake.id }}"><h4>Earthquake magnitude {{ earthquake.properties.mag }}</h4></a>
+            <a ng-href="#/earthquakes/{{ earthquake.id }}"><h4>Earthquake magnitude {{ earthquake.properties.mag }}</h4></a>
             <p>Location: {{ earthquake.properties.place }} {{ earthquake.geometry.coordinates }}</p>
             <p>Time: {{ earthquake.properties.time | date:"dd/MM/yyyy 'at' h:mma" }}</p>
 
@@ -22,7 +22,7 @@
             </div>
 
             <map center="{{ earthquake.geometry.coordinates[1] + ',' + earthquake.geometry.coordinates[0] }}" zoom="4">
-                <marker position="{{ earthquake.geometry.coordinates[1] + ',' + earthquake.geometry.coordinates[0] }}" title="Hello World!"></marker>
+                <marker position="{{ earthquake.geometry.coordinates[1] + ',' + earthquake.geometry.coordinates[0] }}" title="map"></marker>
             </map>
 
             <hr>

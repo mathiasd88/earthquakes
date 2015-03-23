@@ -8,15 +8,15 @@
  * Controller of the earthquakeApp
  */
 angular.module('earthquakeApp')
-.controller('MainCtrl', function ($scope, $filter, Earthquake) {
+.controller('EarthquakesCtrl', function ($scope, $filter, Earthquake) {
 
 	// Default values
 	$scope.today = new Date();
 
 	$scope.earthquakesParams = [];
-	$scope.earthquakesParams.minMagnitude = 4
+	$scope.earthquakesParams.minMagnitude = 0;
 
-	$scope.magnitudes = [{id:4},{id:5},{id:6},{id:7},{id:8}];
+	$scope.magnitudes = [{id:0},{id:1},{id:2},{id:3},{id:4},{id:5},{id:6},{id:7},{id:8}];
 
 	// 
 	$scope.getEarthquakes = function()
