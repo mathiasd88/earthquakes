@@ -1,8 +1,8 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Earthquakes Page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -15,45 +15,31 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-  </head>
-  <body ng-app="earthquakeApp">
+</head>
+<body ng-app="earthquakeApp">
     <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
         <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#/">Earthquakes</a>
-          </div>
-          </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/">Earthquakes</a>
+            </div>
         </div>
-      </div>
     </div>
 
+
     <div class="container">
-    <div ng-view=""></div>
+        <div ng-view=""></div>
     </div>
 
     <div class="footer">
-      <div class="container">
-        <p>Data provided by <a href="http://earthquake.usgs.gov/">earthquake.usgs.gov</a></p>
-      </div>
+        <div class="container">
+            <p>Data provided by <a href="http://earthquake.usgs.gov/">earthquake.usgs.gov</a></p>
+        </div>
     </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -70,11 +56,11 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/earthquakes.js"></script>
-        <script src="scripts/controllers/earthquakedetail.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/earthquakes.js"></script>
+    <script src="scripts/controllers/earthquakedetail.js"></script>
+    <!-- endbuild -->
 
     <script src="scripts/services/earthquake.js"></script>
     <script src="scripts/services/earthquakedetail.js"></script>
