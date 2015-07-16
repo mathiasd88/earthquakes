@@ -7,8 +7,7 @@
  * # MainCtrl
  * Controller of the earthquakeApp
  */
-angular.module('earthquakeApp')
-.controller('EarthquakesCtrl', function ($scope, $filter, Earthquake) {
+app.controller('EarthquakesCtrl', ['$scope', '$filter', 'Earthquake', function ($scope, $filter, Earthquake) {
 
 	// Default values
 	$scope.today = new Date();
@@ -32,4 +31,4 @@ angular.module('earthquakeApp')
 	};
 
 	$scope.getEarthquakes();
-});
+}]);

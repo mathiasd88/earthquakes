@@ -1,6 +1,5 @@
 'use strict';
 
-angular.module('earthquakeApp')
-.factory('Earthquake', function ($resource) {
+app.factory('Earthquake', ['$resource', function ($resource) {
 	return $resource('http://earthquake.usgs.gov/fdsnws/event/1/query');
-});
+}]);

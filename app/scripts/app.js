@@ -8,8 +8,8 @@
  *
  * Main module of the application.
  */
-angular
-  .module('earthquakeApp', [
+
+var app = angular.module('earthquakeApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -17,18 +17,17 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngMap'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/earthquakes', {
-        templateUrl: 'views/earthquakes/index.html',
-        controller: 'EarthquakesCtrl'
-      })
-      .when('/earthquakes/:earthquakeId', {
-        templateUrl: 'views/earthquakes/show.html',
-        controller: 'EarthquakedetailCtrl'
-      })
-      .otherwise({
-        redirectTo: '/earthquakes'
-      });
-  });
+]);
+
+app.config(function ($routeProvider) {
+  $routeProvider
+    .when('/earthquakes', {
+      templateUrl: 'views/earthquakes/index.html'
+    })
+    .when('/earthquakes/:earthquakeId', {
+      templateUrl: 'views/earthquakes/show.html'
+    })
+    .otherwise({
+      redirectTo: '/earthquakes'
+    });
+});

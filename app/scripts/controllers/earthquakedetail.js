@@ -7,8 +7,7 @@
  * # EarthquakedetailCtrl
  * Controller of the earthquakeApp
  */
-angular.module('earthquakeApp')
-.controller('EarthquakedetailCtrl', function ($scope, $routeParams, Earthquake) {
+app.controller('EarthquakedetailCtrl', ['$scope', '$routeParams', 'Earthquake', function ($scope, $routeParams, Earthquake) {
 
 	$scope.getEarthquakeDetail = function()
 	{
@@ -19,4 +18,4 @@ angular.module('earthquakeApp')
 	};
 
 	$scope.getEarthquakeDetail();
-});
+}]);
