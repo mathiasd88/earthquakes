@@ -16,13 +16,6 @@ angular.module('earthquakeApp')
 			format: 'geojson',
 			eventid: $routeParams.earthquakeId,
 		});
-
-		var updated = $scope.earthquake['properties'];
-
-		//http://earthquake.usgs.gov/archive/product/geoserve/ak11534459/us/1427080846678/geoserve.json
-
-		// earthquake.properties.products.geoserve[0].contents['geoserve.json'].url
-		console.log(updated);
 	};
 
 	$scope.getEarthquakeDetail();
