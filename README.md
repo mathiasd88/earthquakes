@@ -1,6 +1,6 @@
 # earthquake
 
-Check this project running at http://getearthquakes.heroku.com/
+Check this project running [here](https://getearthquakes.herokuapp.com)
 
 Builded with AngularJS + United States Geological Survey Earthquakes's API
 
