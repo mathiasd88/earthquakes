@@ -2,7 +2,7 @@
 
 Check this project running [here](https://getearthquakes.herokuapp.com)
 
-Builded with AngularJS + United States Geological Survey Earthquakes's API
+Built with AngularJS + United States Geological Survey Earthquakes's API
 
 ## Build & development
 
